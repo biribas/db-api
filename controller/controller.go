@@ -36,13 +36,13 @@ func GetAllUser (ctx *fiber.Ctx) error {
 //	@Failure		400
 //	@Router			/ [post]
 func CreateUser (ctx *fiber.Ctx) error {
-  var newUser User
+  newUser := new(User)
   err := ctx.BodyParser(newUser)
   if err != nil {
     fmt.Printf("unable to get user from requested body: %v\n", err)
     return ctx.SendStatus(400)
   }
-  data = append(data, newUser)
+  data = append(data, *newUser)
   ctx.Status(fiber.StatusCreated)
   return ctx.JSON(newUser)
 }
