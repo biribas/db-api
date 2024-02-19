@@ -1,6 +1,6 @@
 module github.com/biribas/db-api
 
-go 1.21.7
+go 1.20
 
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
