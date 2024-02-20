@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/${{ secrets.REMOTE_USER }}/db_api
+            cd /home/${{ secrets.REMOTE_USER }}/db-api
             go mod tidy
             $HOME/go/bin/swag init
             go build -v main.go
